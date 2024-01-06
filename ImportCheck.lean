@@ -6,7 +6,7 @@ This script generates the import list for a directory of Lean files.
 -/
 def main (args : List String) : IO UInt32 := do
   if args.length != 1 then
-    throw $ IO.userError "usage: lake exe import_all <dirName>"
+    throw $ IO.userError "usage: lake exe import_check <dirName>"
   let dirName := args[0]!
   let fileName := dirName ++ ".lean"
   let importsFromUser ← IO.FS.readFile ⟨fileName⟩
