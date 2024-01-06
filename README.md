@@ -10,10 +10,10 @@ This is not my original. see [yatima](https://github.com/lurk-lab/yatima/blob/ma
 Add this repository to your `lakefile`:
 
 ```lean
-require mdgen from git
+require importAll from git
   "https://github.com/Seasawher/import-all" @ "main"
 ```
 
-Don't forget to run `lake update mdgen` after editing the `lakefile`.
+Don't forget to run `lake update importAll` after editing the `lakefile`.
 
 Now you can run `lake exe import_all <input_dir>` and `lake exe import_check <input_dir>`.
