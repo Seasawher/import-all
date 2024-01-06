@@ -18,6 +18,6 @@ Don't forget to run `lake update import-all` after editing the `lakefile`.
 
 Now you can run `lake exe import_all <input_dir>` and `lake exe import_check <input_dir>`.
 
-* `import_all` auto generates `import` statement for lean files in `<input_dir>` 
+* `import_all` auto generate `import` statements for lean files in `<input_dir>` 
 
 * `import_check` is mainly for CI. This command checks to see if the lean files in `<input_dir>` have been imported correctly.
