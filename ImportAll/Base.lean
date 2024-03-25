@@ -1,6 +1,6 @@
-import Lake
+import Lean.Data.RBTree
 
-open Lake DSL System
+open System
 
 partial def getLeanFilePaths (fp : FilePath) (acc : Array FilePath := #[]) :
     IO $ Array FilePath := do
@@ -9,7 +9,7 @@ partial def getLeanFilePaths (fp : FilePath) (acc : Array FilePath := #[]) :
   else
     return if fp.extension == some "lean" then acc.push fp else acc
 
-open Lean (RBTree)
+open Lean
 
 def getAllFiles (dirName : String) : IO $ List String := do
   let paths := (← getLeanFilePaths ⟨dirName⟩).map toString
