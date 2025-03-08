@@ -20,8 +20,10 @@ def getImportsString (dirName : String) : IO String := do
     let paths ← getAllFiles dirName
     if paths.isEmpty then
       throw $ IO.userError "no files found"
-    let imports := paths.map $ fun p =>
-        p.replace FilePath.pathSeparator.toString "."
-          |> (String.replace · ".lean" "")
-          |> ("import " ++ ·)
+    let imports := paths.map <| (fun p =>
+        p.replace "/" "."
+        |> (String.replace · "\\" ".")
+        |> (String.replace · ".lean" "")
+        |> ("import " ++ ·)
+      )
     return s!"{"\n".intercalate imports}\n"

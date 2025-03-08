@@ -7,12 +7,13 @@ package «import-all» where
 lean_lib «ImportAll» where
   -- add library configuration options here
 
+lean_lib Tests where
+  globs := #[.submodules `Tests]
+
 @[default_target]
 lean_exe «import_all» where
   root := `ImportAll
-  supportInterpreter := true
 
 @[default_target]
 lean_exe «import_check» where
   root := `ImportCheck
-  supportInterpreter := true
